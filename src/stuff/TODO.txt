@@ -1,0 +1,64 @@
+Models:
+- Generiek?
+- Persoon
+    * long Id
+    * String name
+    * String email
+    * String wachtwoord
+    * String salt
+    > Gebruiker
+        * Adres adres (embedded) (straat, huisnummer, postcode, stad)
+        * boolean regels
+        * Set<Bezorgwijze> Bezorgijzen(@EllementCollection)
+    > Beheerder
+
+
+- Product(abstract)
+    * long Id
+    * String naam
+    * String omschrijving
+    * double prijs
+    * boolean verkocht
+    * boolean gereserveerd
+    * LocalDate postDate
+    * Gebruiker verkoper
+    * MultiMedia (low prio)
+        > Artikel
+            * Set<Bezorgwijze> bezorgwijzen
+            * ArtikelCategorie
+        > Dienst
+            * DienstCategorie
+
+
+- Categorie(abstract)
+    * ArtikelCategorie
+    * DienstCategorie
+
+- Bestelling
+    * Gebruiker Koper
+    * Gebruiker Verkoper
+    * List producten
+    * boolean klaarVoorVerzending
+    * LocalDate verzendDatum
+
+
+Dao's:
+-Generiek?
+
+Recources:
+
+
+Anders:
+- Bezorgwijze(Enum)
+    * afhaal, thuis, post, rembours
+- Betaalwijze
+    * ideal, credit, contant
+- Winkelwagen
+    * Lijst met Producten
+    * Prijs
+- Wachtwoord
+    * Genereer Salt
+    * Genereer Wachtwoord
+    * Hash Password
+    * Gen WW en Hash
+- Login??
