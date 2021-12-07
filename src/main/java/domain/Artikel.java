@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,12 +26,12 @@ public class Artikel extends AbstractProduct {
     @Column(name="Bezorgwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
     @ElementCollection
-    private List<Bezorgwijzen> bezorgwijzen;
+    private Set<Bezorgwijzen> bezorgwijzen;
 
     @Column(name="Betaalwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
     @ElementCollection
-    public List<Betaalwijzen> betaalwijzen;
+    public Set<Betaalwijzen> betaalwijzen;
 
     public Artikel(String name, double price){
         this.name = name;
@@ -42,13 +43,13 @@ public class Artikel extends AbstractProduct {
         this.categorie = categorie;
     }
 
-    public Artikel(String name, double price, ArtikelCategorie categorie, List<Bezorgwijzen> bezorgwijzen) {
+    public Artikel(String name, double price, ArtikelCategorie categorie, Set<Bezorgwijzen> bezorgwijzen) {
         this(name, price, categorie);
         this.bezorgwijzen = bezorgwijzen;
     }
 
     public Artikel(String name, double price, ArtikelCategorie categorie,
-                   List<Bezorgwijzen> bezorgwijzen, List<Betaalwijzen> betaalwijzen){
+                   Set<Bezorgwijzen> bezorgwijzen, Set<Betaalwijzen> betaalwijzen){
         this(name, price, categorie, bezorgwijzen);
         this.betaalwijzen = betaalwijzen;
     }

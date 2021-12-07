@@ -8,8 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Path("test")
 public class UtilityResource {
@@ -36,12 +35,12 @@ public class UtilityResource {
         private List<Bezorgwijzen> bezorgwijzen;
         public List<Betaalwijzen> betaalwijzen;
     */
-        List<Bezorgwijzen> bezorgwijzen = new ArrayList<>();
-        bezorgwijzen.add(Bezorgwijzen.AFHAAL);
-        bezorgwijzen.add(Bezorgwijzen.POST);
-        List<Betaalwijzen> betaalwijzen = new ArrayList<>();
-        betaalwijzen.add(Betaalwijzen.CONTANT);
-        betaalwijzen.add(Betaalwijzen.IDEAL);
+        //Set<Bezorgwijzen> bezorgwijzen = new HashSet<Bezorgwijzen>(Collections.list());
+       // Set<Bezorgwijzen> set = new HashSet<Bezorgwijzen>(Collections.list(Bezorgwijzen.AFHAAL));
+        //Set<Bezorgwijzen> set = new HashSet<Bezorgwijzen>(Collections.list(Bezorgwijzen.AFHAAL, Bezorgwijzen.POST));
+        //EnumSet<Bezorgwijzen> e = new EnumSet<Bezorgwijzen>();
+        Set<Bezorgwijzen> bezorgwijzen = EnumSet.of(Bezorgwijzen.AFHAAL, Bezorgwijzen.POST);
+        Set<Betaalwijzen> betaalwijzen = EnumSet.of(Betaalwijzen.IDEAL, Betaalwijzen.CONTANT);
         Artikel a2 = Artikel.builder()
                 .categorie(ArtikelCategorie.BOEK)
                 .betaalwijzen(betaalwijzen)
