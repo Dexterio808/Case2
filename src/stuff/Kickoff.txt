@@ -1,0 +1,50 @@
+Doel Case : toepassen wat je hebt geleerd en hier weer meer van leren.
+
+Minimale eisen:
+	- Enkele EBP's
+	- Angular front end
+	- JEE REST-backend met database
+	- Automatische test(unit, integrati, api)
+	- Clean Code
+	- Code gerieviewd
+
+Functionele Demo's (10min pp, 20 totaal dus)
+	- Wat had je gepland
+	- Wat heb je gerealiseerd
+	- Demo
+	- Reflectie: wat ging goed, wat kon beter
+
+Technische Reviews (max 10min pp)
+	- kies 1 stuk code of onderdeel dat je planair wil behandelen
+	- reflectie
+
+Retro
+
+Evaluatie
+
+Afsluiting
+
+Regels: 
+- Je moet je code kunnen snappen en uitleggen
+- Ieder persoon realiseert een aantal FULL STACK stories (FE + BE)
+- Geef een verzorgde presentatie/demo
+- Voldoe aan minimale eisen
+- Wil je afwijken van case, overleg met PO (BRAM)
+- Iedere ochtend 9:00 in General: standup
+- Pauzetijden als normaal, maar mag je van afwijken
+- Neem plaats in je Teamkamer
+	- Bram komt af en toe langs anders voelt hij zich alleen
+
+Tips:
+- Realiseer stories 1 voor 1
+- Maak een ontwerp waar nodig (voor jezelf)
+	- Domein
+	- Functioneel
+	- Technisch
+	- ...?
+- 80/20 regel, goed is goed genoeg
+- kwaliteit+volledigheid boven kwantiteit
+- Functionaliteit boven techniek
+- Daily standup: relateer dit aan je story
+- Vraag om hulp waar nodig
+
