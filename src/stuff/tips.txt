@@ -1,0 +1,18 @@
+Hey Pepijn, een aantal dingen die misschien handig zijn om te weten:
+
+1. Bij mij werkte de server eerst niet, maar in je server.xml van je DefaultServer stond die bij mij nog op JavaRestApp (vorige project).
+  Maar dat wordt natuurlijk onze nieuwe app (MarktplaatsV2). Denk hieraan bij het opzetten van je server etc :)
+  ik moest dit aanpassen in mijn lokale server.xml:
+  
+ <application id="marktplaats_war_exploded" location="C:\Users\lamms06\Desktop\Java\marktplaats\target\MarktplaatsV2" name="marktplaats_war_exploded" type="war" context-root="/rest" />
+ 
+ <dataSource id="DefaultDataSource" jndiName="jdbc/MySQL">
+    <!-- JNDI: Java Naming and Directory Interface (API) -->
+    <jdbcDriver libraryRef="MySQLLib" />
+    <properties databaseName="marktplaats" serverName="localhost" portNumber="3306" user="root" password="root" />
+  </dataSource>
+  
+2. Ik heb alvast een begin gemaakt, maar lijkt me wel handig om morgen een deel samen te doen ook. De dingen die ik Commit zijn iig nog niet definitief.
+
+3. Ik heb om zelf even wat te kunnen testen een util package met UtilityResource aangemaakt om even handmatig 1 product toe te voegen,
+  hier zijn vast betere methoden voor maar dit was even snel het eerste wat in me op kwam om snel te kunnen realiseren haha. Het werkt iniedergeval wel.
