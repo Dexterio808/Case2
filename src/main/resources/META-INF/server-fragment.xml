@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+    <!--
+        je eigen server.xml inhoud...
+        ...
+        ...
+    -->
+
+    <!-- VOOR JPA toevoegen (let op databaseName, user, password): -->
+    <dataSource id="DefaultDataSource" jndiName="jdbc/MySQL"> <!-- JNDI: Java Naming and Directory Interface (API) -->
+        <jdbcDriver libraryRef="MySQLLib"/>
+        <properties databaseName="marktplaats"
+                    serverName="localhost" portNumber="3306"
+                    user="root" password="root"/>
+    </dataSource>
+
+    <!--!!! let op! je moet mysql.jar (zie resources) zélf op de server zetten in de hieronder aangegeven dir!!!-->
+    <library id="MySQLLib">
+        <fileset dir="${wlp.install.dir}/usr/shared" includes="mysql.jar"/>
+    </library>
+
+</server>
