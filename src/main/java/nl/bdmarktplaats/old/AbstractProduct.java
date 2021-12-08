@@ -1,4 +1,4 @@
-package nl.bdmarktplaats.domain;
+package nl.bdmarktplaats.old;
 
 import javax.persistence.*;
 import java.time.LocalDate;

@@ -17,7 +17,14 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @NamedQueries({
-
+        @NamedQuery(
+        name = "Gebruiker.findAll",
+        query = "select distinct g from Gebruiker g" ),
+        @NamedQuery(
+                name = "Contact.search",
+                query = "select g from Gebruiker g " +
+                        "where g.naam LIKE :q " +
+                        "OR g.email LIKE :q "),
 })
 
 public class Gebruiker extends Persoon {

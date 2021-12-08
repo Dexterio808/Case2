@@ -1,7 +1,6 @@
 package nl.bdmarktplaats.old;
 
 import lombok.*;
-import nl.bdmarktplaats.domain.AbstractProduct;
 import nl.bdmarktplaats.domain.myenums.Bezorgwijze;
 
 import javax.persistence.*;

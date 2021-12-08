@@ -3,15 +3,15 @@ package nl.bdmarktplaats.recources;
 import nl.bdmarktplaats.dao.Dao;
 import nl.bdmarktplaats.domain.Persoon.Gebruiker;
 
+
 import javax.inject.Inject;
 import javax.ws.rs.Path;
 
 @Path("/gebruikers")
 public class GebruikersRecource extends AbstractResource<Gebruiker> implements JsonResource{
 
-    @Override
-    @Inject
-    public void setDao(Dao<Gebruiker> dao) {
+
+    @Inject public void setDao(Dao<Gebruiker> dao) {
         this.dao = dao;
     }
 }
