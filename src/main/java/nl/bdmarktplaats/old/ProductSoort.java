@@ -1,4 +1,4 @@
-package domain;
+package nl.bdmarktplaats.old;
 
 public enum ProductSoort {
     ARTIKEL("Artikel"),

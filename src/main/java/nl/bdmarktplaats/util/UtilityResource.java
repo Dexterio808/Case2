@@ -1,7 +1,7 @@
-package util;
+package nl.bdmarktplaats.util;
 
-import dao.ArtikelDao;
-import domain.*;
+
+import nl.bdmarktplaats.domain.*;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -10,9 +10,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.*;
 
-@Path("test")
+//@Path("test")
 public class UtilityResource {
-
+/*
     @Inject
     ArtikelDao ArtikelDao;
 
@@ -20,7 +20,7 @@ public class UtilityResource {
     @Path("filldatabase")
     @Produces(MediaType.APPLICATION_JSON)
     public String testAddContact () {
-    /*
+    *//*
         ATTRIBUTEN:
             - ABSTRACTPRODUCT:
         protected String name;
@@ -34,7 +34,7 @@ public class UtilityResource {
         public ArtikelCategorie categorie;
         private List<Bezorgwijzen> bezorgwijzen;
         public List<Betaalwijzen> betaalwijzen;
-    */
+    *//*
         //Set<Bezorgwijzen> bezorgwijzen = new HashSet<Bezorgwijzen>(Collections.list());
        // Set<Bezorgwijzen> set = new HashSet<Bezorgwijzen>(Collections.list(Bezorgwijzen.AFHAAL));
         //Set<Bezorgwijzen> set = new HashSet<Bezorgwijzen>(Collections.list(Bezorgwijzen.AFHAAL, Bezorgwijzen.POST));
@@ -48,5 +48,5 @@ public class UtilityResource {
                 .build();
         ArtikelDao.add(a2);
         return("Producten toegevoegd");
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
-package domain;
+package nl.bdmarktplaats.domain.myenums;
 
-public enum Bezorgwijzen {
+public enum Bezorgwijze {
     AFHAAL("Afhalen magazijn"),
     THUIS("Thuis afhalen"),
     POST("Laten versturen"),
@@ -8,7 +8,7 @@ public enum Bezorgwijzen {
 
     public final String label;
 
-    Bezorgwijzen(String label){
+    Bezorgwijze(String label){
         this.label = label;
     }
 }

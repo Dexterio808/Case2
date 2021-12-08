@@ -1,10 +1,10 @@
-package domain;
+package nl.bdmarktplaats.old;
 
 import lombok.*;
+import nl.bdmarktplaats.domain.AbstractProduct;
+import nl.bdmarktplaats.domain.myenums.Bezorgwijze;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -26,7 +26,7 @@ public class Artikel extends AbstractProduct {
     @Column(name="Bezorgwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
     @ElementCollection
-    private Set<Bezorgwijzen> bezorgwijzen;
+    private Set<Bezorgwijze> bezorgwijzen;
 
     @Column(name="Betaalwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
@@ -43,13 +43,13 @@ public class Artikel extends AbstractProduct {
         this.categorie = categorie;
     }
 
-    public Artikel(String name, double price, ArtikelCategorie categorie, Set<Bezorgwijzen> bezorgwijzen) {
+    public Artikel(String name, double price, ArtikelCategorie categorie, Set<Bezorgwijze> bezorgwijzen) {
         this(name, price, categorie);
         this.bezorgwijzen = bezorgwijzen;
     }
 
     public Artikel(String name, double price, ArtikelCategorie categorie,
-                   Set<Bezorgwijzen> bezorgwijzen, Set<Betaalwijzen> betaalwijzen){
+                   Set<Bezorgwijze> bezorgwijzen, Set<Betaalwijzen> betaalwijzen){
         this(name, price, categorie, bezorgwijzen);
         this.betaalwijzen = betaalwijzen;
     }

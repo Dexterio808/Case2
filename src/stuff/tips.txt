@@ -14,5 +14,5 @@ Hey Pepijn, een aantal dingen die misschien handig zijn om te weten:
   
 2. Ik heb alvast een begin gemaakt, maar lijkt me wel handig om morgen een deel samen te doen ook. De dingen die ik Commit zijn iig nog niet definitief.
 
-3. Ik heb om zelf even wat te kunnen testen een util package met UtilityResource aangemaakt om even handmatig 1 product toe te voegen,
+3. Ik heb om zelf even wat te kunnen testen een nl.bdmarktplaats.nl.bdmarktplaats.util package met UtilityResource aangemaakt om even handmatig 1 product toe te voegen,
   hier zijn vast betere methoden voor maar dit was even snel het eerste wat in me op kwam om snel te kunnen realiseren haha. Het werkt iniedergeval wel.

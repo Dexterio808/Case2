@@ -1,3 +1,5 @@
+package nl.bdmarktplaats;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
