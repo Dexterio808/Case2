@@ -17,11 +17,11 @@ public class Artikel extends AbstractProduct {
     @Column
     @Basic
     @Enumerated(EnumType.STRING)
-    public final ProductSoort soort = ProductSoort.ARTIKEL;
+    private final ProductSoort soort = ProductSoort.ARTIKEL;
 
     @Column(name="Categorie", nullable=false)
     @Enumerated(EnumType.STRING)
-    public ArtikelCategorie categorie;
+    private ArtikelCategorie categorie;
 
     @Column(name="Bezorgwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
@@ -31,7 +31,7 @@ public class Artikel extends AbstractProduct {
     @Column(name="Betaalwijzen", nullable=false)
     @Enumerated(EnumType.STRING)
     @ElementCollection
-    public Set<Betaalwijzen> betaalwijzen;
+    private Set<Betaalwijzen> betaalwijzen;
 
     public Artikel(String name, double price){
         this.name = name;
