@@ -31,7 +31,6 @@ public class Gebruiker extends Persoon {
 
     @Embedded
     private Adres adres;
-    private boolean akkoordRegelement;
     @ElementCollection
     private Set<Bezorgwijze> Bezorgwijzen;
 
