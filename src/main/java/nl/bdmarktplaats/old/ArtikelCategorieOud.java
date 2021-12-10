@@ -1,6 +1,6 @@
 package nl.bdmarktplaats.old;
 
-public enum ArtikelCategorie {
+public enum ArtikelCategorieOud {
     BOEK("Boeken"),
     MULTIMEDIA("MultiMedia"),
     TUIN("Tuin"),
@@ -10,7 +10,7 @@ public enum ArtikelCategorie {
 
     public final String label;
 
-    ArtikelCategorie(String label){
+    ArtikelCategorieOud(String label){
         this.label = label;
     }
 }

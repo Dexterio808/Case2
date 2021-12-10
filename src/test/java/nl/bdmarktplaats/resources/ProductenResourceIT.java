@@ -4,6 +4,9 @@ import nl.bdmarktplaats.App;
 import nl.bdmarktplaats.domain.Persoon.Adres;
 import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
 import nl.bdmarktplaats.domain.Persoon.Gebruiker;
+import nl.bdmarktplaats.domain.Product.Product;
+import nl.bdmarktplaats.domain.Product.ProductCategorie;
+import nl.bdmarktplaats.domain.Product.ProductSoort;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -25,9 +28,8 @@ import static javax.ws.rs.client.Entity.entity;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.junit.Assert.assertEquals;
 
-
 @RunWith(Arquillian.class) // 1: dit is een arquillian test
-public class GebruikersResourceIT {
+public class ProductenResourceIT {
 
     // Ik maak hier een api-test van: aanroepen van (alle?) endpoints, kijken of die het doen, en of ie teruggeven wat je verwacht.
 
@@ -38,7 +40,7 @@ public class GebruikersResourceIT {
 
     @Before
     public void setup() {
-        gebruikersResourcePath = deploymentURL + "api/gebruikers";
+        gebruikersResourcePath = deploymentURL + "api/producten";
     }
 
     // 2: creeer een war zodat arq deze kan deployen
@@ -56,7 +58,7 @@ public class GebruikersResourceIT {
 
     @Test // 3: maak testjes
     @SuppressWarnings("unchecked")
-    public void whenIGetAllGebruikersIGetTheCorrectResult() {
+    public void whenIGetAllProductenIGetTheCorrectResult() {
         // We gaan hier voor POSTMAN spelen.
         Client postman = ClientBuilder.newClient();
 
@@ -68,36 +70,34 @@ public class GebruikersResourceIT {
         Bezorgwijze b = new Bezorgwijze(true, true, false, false);
         g.setBezorgwijze(b);
 
+        Product p = new Product();
+        p.setCategorie(ProductCategorie.BOEKEN);
+        p.setNaam("Harry Potter");
+        p.setPrijs(10.00);
+        p.setSoort(ProductSoort.ARTIKEL);
+        p.setVerkoper(g);
+
         // post some contacts
         String contactJson = postman
-                .target(gebruikersResourcePath)
+                .target(deploymentURL + "api/gebruikers")
                 .request()
                 .post(entity(g, APPLICATION_JSON), String.class);
 
         String contactJson2 = postman
                 .target(gebruikersResourcePath)
                 .request()
-                .post(entity(g, APPLICATION_JSON), String.class);
+                .post(entity(p, APPLICATION_JSON), String.class);
 
         // get all contacts
-        List<Gebruiker> list = postman
+        List<Product> list = postman
                 .target(gebruikersResourcePath)
-                .request().get(new GenericType<List<Gebruiker>>() {
+                .request().get(new GenericType<List<Product>>() {
                 });
 
-        Gebruiker g2 = list.get(0);
+        Product p1 = list.get(0);
 
-        assertEquals(list.size(), 2);
-        assertEquals("Stan", g2.getNaam());
-        assertEquals("Teststraat", g2.getAdres().getStraat());
-        assertEquals("Arnhem", g2.getAdres().getStad());
-        assertEquals("11", g2.getAdres().getHuisnummer());
-        assertEquals("1111AA", g2.getAdres().getPostcode());
-        Assert.assertTrue(g2.getBezorgwijze().isThuis());
-        Assert.assertTrue(g2.getBezorgwijze().isMagazijn());
-        Assert.assertFalse(g2.getBezorgwijze().isVersturen());
-        Assert.assertFalse(g2.getBezorgwijze().isRembours());
-        Assert.assertNotNull(g2.getWachtwoord());
-        Assert.assertNotNull(g2.getSalt());
+        assertEquals(list.size(), 1);
+        assertEquals("HarryPotter", p1.getNaam());
+        Assert.assertFalse(p1.getVerkoper().getBezorgwijze().isVersturen());
     }
 }
