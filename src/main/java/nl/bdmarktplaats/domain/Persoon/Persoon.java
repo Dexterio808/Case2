@@ -26,6 +26,8 @@ public abstract class Persoon implements AbstractEntity<Long> {
     private String wachtwoord;
     private String salt;
 
+    private String token;
+
     @PrePersist
     public void hashPassword() {
         try {
