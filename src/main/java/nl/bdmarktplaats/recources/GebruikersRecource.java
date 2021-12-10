@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.ws.rs.Path;
 
 @Path("/gebruikers")
-public class GebruikersResource extends AbstractResource<Gebruiker> implements JsonResource{
+public class GebruikersRecource extends AbstractResource<Gebruiker> implements JsonResource{
 
 
     @Inject public void setDao(Dao<Gebruiker> dao) {
