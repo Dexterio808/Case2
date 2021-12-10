@@ -10,7 +10,7 @@ import javax.persistence.Embeddable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Bezorgwijzentest {
+public class Bezorgwijze {
     private boolean thuis;
     private boolean magazijn;
     private boolean versturen;
