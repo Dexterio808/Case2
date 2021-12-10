@@ -1,4 +1,4 @@
-package nl.bdmarktplaats.recources;
+/*package nl.bdmarktplaats.recources;
 
 import nl.bdmarktplaats.domain.myenums.Bezorgwijze;
 
@@ -14,4 +14,4 @@ public class BezorgwijzeResource {
         return Set.of(Bezorgwijze.values());
     }
 
-}
+}*/

@@ -21,7 +21,7 @@ import java.util.Set;
         name = "Gebruiker.findAll",
         query = "select distinct g from Gebruiker g" ),
         @NamedQuery(
-                name = "Contact.search",
+                name = "Gebruiker.search",
                 query = "select g from Gebruiker g " +
                         "where g.naam LIKE :q " +
                         "OR g.email LIKE :q "),
@@ -31,7 +31,10 @@ public class Gebruiker extends Persoon {
 
     @Embedded
     private Adres adres;
-    @ElementCollection
-    private Set<Bezorgwijze> Bezorgwijzen;
+    @Embedded
+    private Bezorgwijzentest bezorgwijze;
 
 }
+
+ /*   @ElementCollection
+    private Set<Bezorgwijze> Bezorgwijzen;*/
