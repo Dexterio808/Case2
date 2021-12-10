@@ -23,9 +23,22 @@ import javax.xml.bind.annotation.XmlRootElement;
                 query = "select g from Gebruiker g " +
                         "where g.naam LIKE :q " +
                         "OR g.email LIKE :q "),
+        @NamedQuery(
+                name= "Gebruiker.findByEmail",
+                query = "select g from Gebruiker g " +
+                        "where g.email = :email"),
+        @NamedQuery(
+                name = "Gebruiker.findByEmailAndWachtwoord",
+                query = "SELECT g FROM Gebruiker g" +
+                        " WHERE g.email = :email" +
+                        " AND g.wachtwoord = :wachtwoord"
+        ),
 })
 
 public class Gebruiker extends Persoon {
+
+    public static final String FIND_BY_EMAIL_WACHTWOORD = "Gebruiker.findByEmailAndWachtwoord";
+
 
     @Embedded
     private Adres adres;
@@ -34,5 +47,3 @@ public class Gebruiker extends Persoon {
 
 }
 
- /*   @ElementCollection
-    private Set<Bezorgwijze> Bezorgwijzen;*/
