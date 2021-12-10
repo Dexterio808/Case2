@@ -2,7 +2,7 @@ package nl.bdmarktplaats.resources;
 
 import nl.bdmarktplaats.App;
 import nl.bdmarktplaats.domain.Persoon.Adres;
-import nl.bdmarktplaats.domain.Persoon.Bezorgwijzentest;
+import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
 import nl.bdmarktplaats.domain.Persoon.Gebruiker;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -64,7 +64,7 @@ public class GebruikersResourceIT {
         Adres a = new Adres("Teststraat", "11", "1111AA", "Arnhem");
         g.setAdres(a);
         g.setEmail("Stan@mail.com");
-        Bezorgwijzentest b = new Bezorgwijzentest(true, true, false, false);
+        Bezorgwijze b = new Bezorgwijze(true, true, false, false);
         g.setBezorgwijze(b);
 
         // post some contacts
