@@ -1,5 +1,6 @@
 package nl.bdmarktplaats.resources;
 
+import lombok.extern.slf4j.Slf4j;
 import nl.bdmarktplaats.App;
 import nl.bdmarktplaats.domain.Persoon.Adres;
 import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
@@ -10,6 +11,7 @@ import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,6 +61,7 @@ public class GebruikersResourceIT {
     public void whenIGetAllGebruikersIGetTheCorrectResult() {
         // We gaan hier voor POSTMAN spelen.
         Client postman = ClientBuilder.newClient();
+
 
         Gebruiker g = new Gebruiker();
         g.setNaam("Stan");

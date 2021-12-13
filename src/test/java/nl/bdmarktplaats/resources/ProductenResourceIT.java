@@ -1,5 +1,6 @@
 package nl.bdmarktplaats.resources;
 
+import lombok.extern.slf4j.Slf4j;
 import nl.bdmarktplaats.App;
 import nl.bdmarktplaats.domain.Persoon.Adres;
 import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
@@ -32,6 +33,7 @@ import static javax.ws.rs.client.Entity.entity;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 
 @RunWith(Arquillian.class) // 1: dit is een arquillian test
 public class ProductenResourceIT {
