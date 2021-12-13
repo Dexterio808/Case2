@@ -1,17 +1,29 @@
 package nl.bdmarktplaats.recources;
 
 import nl.bdmarktplaats.dao.Dao;
+import nl.bdmarktplaats.domain.Product.Product;
 import nl.bdmarktplaats.domain.Product.Artikel;
-import nl.bdmarktplaats.old.ProductCategorieOud;
 
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 
 @Path("/producten")
-public class ProductenResource extends AbstractResource<Artikel> implements JsonResource {
+public class ProductenResource extends AbstractResource<Product> implements JsonResource {
 
-    @Inject public void setDao(Dao<Artikel> dao) { this.dao = dao; }
+    @Inject
+    public void setDao(Dao<Product> dao) {
+        this.dao = dao;
+    }
+
+/*
+
+    @Inject
+    private ArtikelResource artikelResource;
+
+    @Inject
+    private DienstResource dienstResource;
+*/
+
 
     @GET
     @Path("/addproducttest")

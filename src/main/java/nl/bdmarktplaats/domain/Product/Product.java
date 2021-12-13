@@ -8,8 +8,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
-@MappedSuperclass
-public abstract class AbstractProduct implements AbstractEntity<Long> {
+/*@MappedSuperclass*/
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "productsoort", discriminatorType = DiscriminatorType.STRING)
+public class Product implements AbstractEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

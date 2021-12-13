@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
 
 
 import javax.persistence.*;
@@ -16,6 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor // idem
 @AllArgsConstructor
 @Entity
+@DiscriminatorValue("dienst")
 @NamedQueries({
         @NamedQuery(
                 name = "Dienst.findAll",
@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
                         "OR d.omschrijving LIKE :d "),
 })
 
-public class Dienst extends AbstractProduct {
+public class Dienst extends Product {
 
 
 }
