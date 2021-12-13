@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor // idem
 @AllArgsConstructor
 @Entity
+@DiscriminatorValue("artikel")
 @NamedQueries({
         @NamedQuery(
                 name = "Artikel.findAll",
@@ -27,7 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
                         "OR a.omschrijving LIKE :a "),
 })
 
-public class Artikel extends AbstractProduct {
+public class Artikel extends Product {
 
     @Embedded
     private Bezorgwijze bezorgwijzen;
