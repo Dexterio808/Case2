@@ -14,7 +14,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Builder
 @XmlRootElement // to be able to send xml response with JAX-B
 @NoArgsConstructor // idem
-@AllArgsConstructor
 @Entity
 @NamedQueries({
         @NamedQuery(

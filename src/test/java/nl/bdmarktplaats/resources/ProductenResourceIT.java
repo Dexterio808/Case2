@@ -81,9 +81,9 @@ public class ProductenResourceIT {
         return warFilled;
     }
 
-    @Test // 3: maak testjes
-    @SuppressWarnings("unchecked")
-    public void whenIGetAllProductenIGetTheCorrectResult() {
+    //@Test // 3: maak testjes
+
+   /* public void whenIGetAllProductenIGetTheCorrectResult() {
 
         Client postman = ClientBuilder.newClient();
         Gebruiker gebruiker = postman.target(deploymentURL+"api/gebruikers/123")
@@ -115,6 +115,6 @@ public class ProductenResourceIT {
         assertEquals("Arnhem", p1.getVerkoper().getAdres().getStad());
         assertEquals("11", p1.getVerkoper().getAdres().getHuisnummer());
         assertEquals("1111AA", p1.getVerkoper().getAdres().getPostcode());
-    }
-}
-*/
+    }*/
+//}
+
