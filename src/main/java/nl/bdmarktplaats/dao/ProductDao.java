@@ -5,7 +5,7 @@ import nl.bdmarktplaats.domain.Product.Product;
 import javax.ejb.Stateless;
 
 @Stateless
-public class AbstractProductDao extends Dao<Product> {
+public class ProductDao extends Dao<Product> {
 
 }
 

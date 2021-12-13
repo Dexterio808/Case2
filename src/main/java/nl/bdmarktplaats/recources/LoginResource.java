@@ -50,7 +50,7 @@ public class LoginResource implements JsonResource {
     public GebruikerOutput login(Gebruiker g) {
         try {
             Gebruiker gebruiker = getDao().authenticate(g.getEmail(), g.getWachtwoord());
-            return new GebruikerOutput(gebruiker.getEmail(), issueToken(g.getEmail()));
+            return new GebruikerOutput(getDao().findByEmail(g.getEmail()).getId(), gebruiker.getEmail(), issueToken(g.getEmail()));
         } catch (Exception e) {
             throw new NotAuthorizedException("User " + g + " is not authorized.");
         }

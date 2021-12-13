@@ -71,19 +71,16 @@ public class ProductenResourceIT {
                 .addPackages(true, App.class.getPackage())
                 .addAsWebInfResource("META-INF/beans-test.xml", "META-INF/beans.xml") // to activate CDI
                 .addAsResource("META-INF/persistence-test.xml", "META-INF/persistence.xml") // for JPA
-*/
-/*                .addAsResource(new ClassLoaderAsset("log4j2.xml"), "log4j2.xml")
-                .addAsResource("log4j2.xml", "log4j2-test.xml")*//*
-
+                .addAsResource(new ClassLoaderAsset("log4j2.xml"), "log4j2.xml")
+                .addAsResource("log4j2.xml", "log4j2-test.xml")
                 ;
 
 
         return warFilled;
     }
 
-    //@Test // 3: maak testjes
-
-   /* public void whenIGetAllProductenIGetTheCorrectResult() {
+    @Test // 3: maak testjes
+    public void whenIGetAllProductenIGetTheCorrectResult() {
 
         Client postman = ClientBuilder.newClient();
         Gebruiker gebruiker = postman.target(deploymentURL+"api/gebruikers/123")
@@ -115,6 +112,7 @@ public class ProductenResourceIT {
         assertEquals("Arnhem", p1.getVerkoper().getAdres().getStad());
         assertEquals("11", p1.getVerkoper().getAdres().getHuisnummer());
         assertEquals("1111AA", p1.getVerkoper().getAdres().getPostcode());
-    }*/
-//}
+    }
+}
 
+*/

@@ -12,6 +12,16 @@ import java.time.LocalDate;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "productsoort", discriminatorType = DiscriminatorType.STRING)
+@NamedQueries({
+        @NamedQuery(
+                name = "Product.findAll",
+                query = "select distinct p from Product p" ),
+        @NamedQuery(
+                name = "Product.search",
+                query = "select p from Product p " +
+                        "where p.naam LIKE :q " +
+                        "OR p.omschrijving LIKE :p "),
+})
 public class Product implements AbstractEntity<Long> {
 
     @Id

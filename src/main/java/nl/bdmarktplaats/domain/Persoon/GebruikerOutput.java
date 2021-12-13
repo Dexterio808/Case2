@@ -16,6 +16,7 @@ import java.security.NoSuchAlgorithmException;
 @Data
 @AllArgsConstructor
 public class GebruikerOutput  {
+    private Long id;
     private String email;
     private String token;
 
