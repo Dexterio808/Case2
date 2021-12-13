@@ -1,19 +1,28 @@
 package nl.bdmarktplaats.domain.Product;
 
-public enum ProductCategorie {
-    BOEKEN("Artikel"),
-    MULTIMEDIA("Artikel"),
-    TUIN("Artikel"),
-    KEUKEN("Artikel"),
-    OVERIG("Artikel"),
-    CURSUS("Dienst"),
-    HUISHOUDEN("Dienst"),
-    VERVOER("Dienst"),
-    ANDERE("Dienst");
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    public final String label;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
-    private ProductCategorie(String label) {
-        this.label = label;
-    }
+@Data
+@Builder
+@XmlRootElement // to be able to send xml response with JAX-B
+@NoArgsConstructor // idem
+@AllArgsConstructor
+@Entity
+public class ProductCategorie {
+
+    @Id
+    @GeneratedValue
+    private Long Id;
+
+    private String omschrijving;
+
 }
