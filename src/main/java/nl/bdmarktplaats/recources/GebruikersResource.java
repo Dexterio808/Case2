@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 import static java.time.LocalDateTime.now;
 
 @Path("/gebruikers")
-public class GebruikersRecource extends AbstractResource<Gebruiker> implements JsonResource{
+public class GebruikersResource extends AbstractResource<Gebruiker> implements JsonResource{
 
     @Context
     private UriInfo uriInfo;
