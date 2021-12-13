@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import nl.bdmarktplaats.domain.AbstractEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor // idem
 @AllArgsConstructor
 @Entity
-public class ProductCategorie {
+public class ProductCategorie implements AbstractEntity<Long> {
 
     @Id
     @GeneratedValue
