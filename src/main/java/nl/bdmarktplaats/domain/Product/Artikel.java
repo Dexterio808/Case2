@@ -38,7 +38,7 @@ public class Artikel extends Product {
     }
 
     public static Artikel of(ProductInput input, ProductCategorie c) {
-        return new Artikel(input.getId(), c, input.getNaam(), input.getPrijs(), input.getOmschrijving(), input.isVerkocht(), input.isGereserveerd(), LocalDate.now(), input.getVerkoper(), input.getBetaalwijzen(), new Bezorgwijze(false,false,false,false));
+        return new Artikel(input.getId(), c, input.getNaam(), input.getPrijs(), input.getOmschrijving(), input.isVerkocht(), input.isGereserveerd(), LocalDate.now(), input.getVerkoper(), input.getBetaalwijzen(), input.getBezorgwijzen());
     }
 
     @Embedded
