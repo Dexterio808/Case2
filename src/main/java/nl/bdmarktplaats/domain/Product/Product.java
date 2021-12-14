@@ -1,13 +1,16 @@
 package nl.bdmarktplaats.domain.Product;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import nl.bdmarktplaats.domain.AbstractEntity;
 import nl.bdmarktplaats.domain.Persoon.Gebruiker;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Data
+@Data @AllArgsConstructor
+@NoArgsConstructor
 /*@MappedSuperclass*/
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -43,6 +46,10 @@ public class Product implements AbstractEntity<Long> {
 
     @Embedded
     private Betaalwijze betaalwijzen;
+
+    /*public static Product of(ProductInput input, ProductCategorie c) {
+        return new Product(input.getId(), c, input.getNaam(), input.getPrijs(), input.getOmschrijving(), input.isVerkocht(), input.isGereserveerd(), LocalDate.now(), input.getVerkoper(), input.getBetaalwijzen());
+    }*/
 
     @Override
     public Long getId() {

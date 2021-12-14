@@ -3,8 +3,11 @@ package nl.bdmarktplaats.recources;
 import nl.bdmarktplaats.dao.ArtikelDao;
 import nl.bdmarktplaats.dao.Dao;
 import nl.bdmarktplaats.dao.DienstDao;
+import nl.bdmarktplaats.dao.ProductCategorieDao;
 import nl.bdmarktplaats.domain.Product.Artikel;
 import nl.bdmarktplaats.domain.Product.Dienst;
+import nl.bdmarktplaats.domain.Product.ProductCategorie;
+import nl.bdmarktplaats.domain.Product.ProductInput;
 
 import javax.inject.Inject;
 import javax.ws.rs.POST;
@@ -15,16 +18,22 @@ import java.time.LocalDate;
 public class DienstResource extends AbstractResource<Dienst> implements JsonResource {
 
     @Inject
+    private ProductCategorieDao pcd;
+
+    @Inject
     public void setDao(Dao<Dienst> dao) { this.dao = dao; }
 
     public DienstDao getDao(){
         return (DienstDao) this.dao;
     }
 
-    @Override
+    @Path("/input")
     @POST
-    public Dienst post(Dienst dienst) {
-        dienst.setPostDate(LocalDate.now());
+    public Dienst post(ProductInput input) {
+        ProductCategorie productCategorie = pcd.getById(input.getCategorie());
+        Dienst dienst = Dienst.of(input, productCategorie);
+
+        /*artikel.setPostDate(LocalDate.now());*/
         if (getDao().add(dienst) != null) {
             return dienst;
         } else {

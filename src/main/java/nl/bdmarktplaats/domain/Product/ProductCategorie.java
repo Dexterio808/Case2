@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import nl.bdmarktplaats.domain.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Data
@@ -18,6 +15,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor // idem
 @AllArgsConstructor
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "ProductCategorie.findAll",
+                query = "select distinct p from ProductCategorie p" ),
+        @NamedQuery(
+                name = "ProductCategorie.search",
+                query = "select p from ProductCategorie p " +
+                        "where p.omschrijving LIKE :p "),
+})
 public class ProductCategorie implements AbstractEntity<Long> {
 
     @Id
