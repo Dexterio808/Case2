@@ -32,26 +32,10 @@ public class ProductenResource extends AbstractResource<Product> implements Json
         return (ProductDao) this.dao;
     }
 
-
-/*
-
-    @Inject
-    private ArtikelResource artikelResource;
-
-    @Inject
-    private DienstResource dienstResource;
-*/
-
-
     @GET
-    @Path("/addproducttest")
-    public String testAddProduct() {
+    @Path("/gebruiker/{id}")
+    public Collection<Product> getProductenFromGebruiker(@PathParam("id")long id) {
 
-        Artikel p = new Artikel();
-        p.setNaam("Harry Potter");
-        p.setPrijs(10.00);
-
-        dao.add(p);
-        return "gelukt";
+           return getDao().findByGebruiker(id);
     }
 }

@@ -25,6 +25,10 @@ import java.time.LocalDate;
                         "where p.naam LIKE :q " +
                         "OR p.omschrijving LIKE :q "+
                         "OR p.categorie.omschrijving LIKE :q"),
+        @NamedQuery(
+                name = "Product.findByGebruiker",
+                query = "select distinct p from Product p " +
+                        "where p.verkoper.Id = :id"),
 })
 public class Product implements AbstractEntity<Long> {
 
