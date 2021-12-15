@@ -50,15 +50,5 @@ public class Product implements AbstractEntity<Long> {
     /*public static Product of(ProductInput input, ProductCategorie c) {
         return new Product(input.getId(), c, input.getNaam(), input.getPrijs(), input.getOmschrijving(), input.isVerkocht(), input.isGereserveerd(), LocalDate.now(), input.getVerkoper(), input.getBetaalwijzen());
     }*/
-
-    @Override
-    public Long getId() {
-        return null;
-    }
-
-    @Override
-    public void setId(Long id) {
-
-    }
 }
 
