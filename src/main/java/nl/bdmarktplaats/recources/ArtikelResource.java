@@ -7,12 +7,14 @@ import nl.bdmarktplaats.domain.Product.Artikel;
 import nl.bdmarktplaats.domain.Product.Product;
 import nl.bdmarktplaats.domain.Product.ProductCategorie;
 import nl.bdmarktplaats.domain.Product.ProductInput;
+import nl.bdmarktplaats.filters.Authorized;
 
 import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import java.time.LocalDate;
 
+@Authorized
 @Path("/artikelen")
 public class ArtikelResource extends AbstractResource<Artikel> implements JsonResource {
 

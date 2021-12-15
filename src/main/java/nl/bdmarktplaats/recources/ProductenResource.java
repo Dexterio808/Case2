@@ -9,12 +9,14 @@ import nl.bdmarktplaats.domain.Product.Product;
 import nl.bdmarktplaats.domain.Product.Artikel;
 import nl.bdmarktplaats.domain.Product.ProductCategorie;
 import nl.bdmarktplaats.domain.Product.ProductInput;
+import nl.bdmarktplaats.filters.Authorized;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.time.LocalDate;
 import java.util.Collection;
 
+@Authorized
 @Path("/producten")
 public class ProductenResource extends AbstractResource<Product> implements JsonResource {
 
