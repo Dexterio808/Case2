@@ -16,7 +16,7 @@ import javax.ws.rs.*;
 import java.time.LocalDate;
 import java.util.Collection;
 
-@Authorized
+/*@Authorized*/
 @Path("/producten")
 public class ProductenResource extends AbstractResource<Product> implements JsonResource {
 

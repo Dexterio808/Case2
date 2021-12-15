@@ -15,7 +15,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import java.time.LocalDate;
 
-@Authorized
+/*@Authorized*/
 @Path("/diensten")
 public class DienstResource extends AbstractResource<Dienst> implements JsonResource {
 

@@ -26,7 +26,8 @@ import java.time.LocalDate;
                 name = "Dienst.search",
                 query = "select d from Dienst d " +
                         "where d.naam LIKE :q " +
-                        "OR d.omschrijving LIKE :d "),
+                        "OR d.omschrijving LIKE :q " +
+                        "OR d.categorie.omschrijving LIKE :q"),
 })
 
 public class Dienst extends Product {

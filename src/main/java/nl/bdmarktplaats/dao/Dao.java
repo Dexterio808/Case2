@@ -19,7 +19,7 @@ public abstract class Dao<E extends AbstractEntity<Long>> {
 
     public E getById(Long id) { return em.find(E(), id); }
 
-    public Collection<E> get(Long q) {
+    public Collection<E> get(String q) {
         TypedQuery<E> namedQuery = em.createNamedQuery(typeSimple() + ".search", E());
         namedQuery.setParameter("q", "%" + q + "%");
         return namedQuery.getResultList();

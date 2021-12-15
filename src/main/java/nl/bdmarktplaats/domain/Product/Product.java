@@ -23,7 +23,8 @@ import java.time.LocalDate;
                 name = "Product.search",
                 query = "select p from Product p " +
                         "where p.naam LIKE :q " +
-                        "OR p.omschrijving LIKE :p "),
+                        "OR p.omschrijving LIKE :q "+
+                        "OR p.categorie.omschrijving LIKE :q"),
 })
 public class Product implements AbstractEntity<Long> {
 

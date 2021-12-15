@@ -27,7 +27,8 @@ import java.time.LocalDate;
                 name = "Artikel.search",
                 query = "select a from Artikel a " +
                         "where a.naam LIKE :q " +
-                        "OR a.omschrijving LIKE :a "),
+                        "OR a.omschrijving LIKE :q " +
+                        "OR a.categorie.omschrijving LIKE :q") ,
 })
 
 public class Artikel extends Product {

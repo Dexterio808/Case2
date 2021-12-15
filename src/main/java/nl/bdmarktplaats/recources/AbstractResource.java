@@ -13,7 +13,7 @@ public abstract class AbstractResource<E extends AbstractEntity<Long>> {
     public abstract void setDao(Dao<E> dao);
 
     @GET
-    public Collection<E> getAll(@QueryParam("q") Long q) {
+    public Collection<E> getAll(@QueryParam("q") String q) {
         return q == null ? dao.getAll() : dao.get(q);
     }
 
