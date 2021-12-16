@@ -1,8 +1,6 @@
 package nl.bdmarktplaats.domain.Persoon;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nl.bdmarktplaats.domain.AbstractEntity;
 import nl.bdmarktplaats.sucurity.Password;

@@ -4,7 +4,6 @@ import nl.bdmarktplaats.dao.ArtikelDao;
 import nl.bdmarktplaats.dao.Dao;
 import nl.bdmarktplaats.dao.ProductCategorieDao;
 import nl.bdmarktplaats.domain.Product.Artikel;
-import nl.bdmarktplaats.domain.Product.Product;
 import nl.bdmarktplaats.domain.Product.ProductCategorie;
 import nl.bdmarktplaats.domain.Product.ProductInput;
 import nl.bdmarktplaats.filters.Authorized;
@@ -12,9 +11,8 @@ import nl.bdmarktplaats.filters.Authorized;
 import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import java.time.LocalDate;
 
-/*@Authorized*/
+@Authorized
 @Path("/artikelen")
 public class ArtikelResource extends AbstractResource<Artikel> implements JsonResource {
 
@@ -34,7 +32,6 @@ public class ArtikelResource extends AbstractResource<Artikel> implements JsonRe
         ProductCategorie productCategorie = pcd.getById(input.getCategorie());
         Artikel artikel = Artikel.of(input, productCategorie);
 
-        /*artikel.setPostDate(LocalDate.now());*/
         if (getDao().add(artikel) != null) {
             return artikel;
         } else {

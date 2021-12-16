@@ -51,9 +51,5 @@ public class Product implements AbstractEntity<Long> {
 
     @Embedded
     private Betaalwijze betaalwijzen;
-
-    /*public static Product of(ProductInput input, ProductCategorie c) {
-        return new Product(input.getId(), c, input.getNaam(), input.getPrijs(), input.getOmschrijving(), input.isVerkocht(), input.isGereserveerd(), LocalDate.now(), input.getVerkoper(), input.getBetaalwijzen());
-    }*/
 }
 

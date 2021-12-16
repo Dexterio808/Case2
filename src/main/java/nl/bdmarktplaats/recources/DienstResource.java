@@ -1,10 +1,8 @@
 package nl.bdmarktplaats.recources;
 
-import nl.bdmarktplaats.dao.ArtikelDao;
 import nl.bdmarktplaats.dao.Dao;
 import nl.bdmarktplaats.dao.DienstDao;
 import nl.bdmarktplaats.dao.ProductCategorieDao;
-import nl.bdmarktplaats.domain.Product.Artikel;
 import nl.bdmarktplaats.domain.Product.Dienst;
 import nl.bdmarktplaats.domain.Product.ProductCategorie;
 import nl.bdmarktplaats.domain.Product.ProductInput;
@@ -13,9 +11,8 @@ import nl.bdmarktplaats.filters.Authorized;
 import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import java.time.LocalDate;
 
-/*@Authorized*/
+@Authorized
 @Path("/diensten")
 public class DienstResource extends AbstractResource<Dienst> implements JsonResource {
 
@@ -35,7 +32,6 @@ public class DienstResource extends AbstractResource<Dienst> implements JsonReso
         ProductCategorie productCategorie = pcd.getById(input.getCategorie());
         Dienst dienst = Dienst.of(input, productCategorie);
 
-        /*artikel.setPostDate(LocalDate.now());*/
         if (getDao().add(dienst) != null) {
             return dienst;
         } else {

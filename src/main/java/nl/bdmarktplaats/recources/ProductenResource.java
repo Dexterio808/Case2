@@ -1,22 +1,16 @@
 package nl.bdmarktplaats.recources;
 
-import lombok.extern.slf4j.Slf4j;
-import nl.bdmarktplaats.dao.ArtikelDao;
 import nl.bdmarktplaats.dao.Dao;
 import nl.bdmarktplaats.dao.ProductCategorieDao;
 import nl.bdmarktplaats.dao.ProductDao;
 import nl.bdmarktplaats.domain.Product.Product;
-import nl.bdmarktplaats.domain.Product.Artikel;
-import nl.bdmarktplaats.domain.Product.ProductCategorie;
-import nl.bdmarktplaats.domain.Product.ProductInput;
 import nl.bdmarktplaats.filters.Authorized;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import java.time.LocalDate;
 import java.util.Collection;
 
-/*@Authorized*/
+@Authorized
 @Path("/producten")
 public class ProductenResource extends AbstractResource<Product> implements JsonResource {
 

@@ -1,10 +1,8 @@
 package nl.bdmarktplaats.domain.Product;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nl.bdmarktplaats.domain.Persoon.Bezorgwijze;
 import nl.bdmarktplaats.domain.Persoon.Gebruiker;
 
 
